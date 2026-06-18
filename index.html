@@ -193,12 +193,95 @@ body{
     color:#cbd5e1;
     line-height:1.8;
 }
- @media(max-width:850px){
-      .hero,.contact{grid-template-columns:1fr}
-      .grid,.stats,.summary-list{grid-template-columns:1fr}
-      h1{font-size:42px}
-      .nav-links{display:none}
-    }
+ /* Better mobile layout */
+@media(max-width:850px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:92%;
+  }
+
+  nav{
+    flex-direction:column;
+    gap:14px;
+    text-align:center;
+  }
+
+  .logo{
+    font-size:24px;
+  }
+
+  .nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    font-size:13px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:55px 0 45px;
+    text-align:center;
+    gap:35px;
+  }
+
+  .badge{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  h1{
+    font-size:42px;
+  }
+
+  .subtitle{
+    font-size:20px;
+  }
+
+  .desc{
+    margin:auto;
+    margin-bottom:20px;
+  }
+
+  .cert-line{
+    font-size:14px;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .btn{
+    width:100%;
+    max-width:260px;
+    text-align:center;
+  }
+
+  .photo-card{
+    max-width:320px;
+    margin:auto;
+  }
+
+  .stats,
+  .grid,
+  .summary-list,
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    font-size:28px;
+  }
+
+  .card,
+  .stat{
+    padding:22px;
+  }
+}
 </style>
    
   </style>
