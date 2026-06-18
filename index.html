@@ -4,55 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhil Dev | Systems Engineer</title>
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{font-family:Segoe UI,Arial,sans-serif;background:#07111f;color:#eaf2ff;line-height:1.6}
     a{text-decoration:none;color:inherit}
     .container{width:90%;max-width:1150px;margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(7,17,31,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+
     nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
     .logo{font-weight:800;font-size:22px;color:#60a5fa}
     .nav-links{display:flex;gap:22px;font-size:14px;color:#b9c7d8}
     .nav-links a:hover{color:#60a5fa}
-    .hero{padding:90px 0 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
-    .badge{display:inline-block;padding:8px 14px;border:1px solid rgba(96,165,250,.3);border-radius:999px;color:#93c5fd;background:rgba(96,165,250,.08);margin-bottom:20px;font-size:14px}
+
+    .hero{
+      padding:90px 0 70px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:50px;
+      align-items:center
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid rgba(96,165,250,.3);
+      border-radius:999px;
+      color:#93c5fd;
+      background:rgba(96,165,250,.08);
+      margin-bottom:20px;
+      font-size:14px
+    }
+
     h1{font-size:56px;line-height:1.1;margin-bottom:14px}
     h1 span{color:#60a5fa}
     .subtitle{font-size:23px;color:#dbeafe;margin-bottom:18px}
-    .desc{color:#b9c7d8;max-width:720px;margin-bottom:28px}
+    .desc{color:#b9c7d8;max-width:720px;margin-bottom:18px}
+    .cert-line{margin-bottom:28px;color:#93c5fd;font-size:15px}
+
     .buttons{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{padding:13px 20px;border-radius:10px;font-weight:700;border:1px solid rgba(255,255,255,.12)}
+    .btn{
+      padding:13px 20px;
+      border-radius:10px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+      transition:.25s
+    }
+    .btn:hover{transform:translateY(-2px)}
     .primary{background:#2563eb;color:#fff}
     .secondary{background:rgba(255,255,255,.06);color:#eaf2ff}
-    .photo-card{background:linear-gradient(145deg,rgba(37,99,235,.28),rgba(15,23,42,.9));padding:14px;border-radius:28px;border:1px solid rgba(255,255,255,.12)}
+
+    .photo-card{
+      background:linear-gradient(145deg,rgba(37,99,235,.28),rgba(15,23,42,.9));
+      padding:14px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.12)
+    }
+
     .photo-card img{width:100%;border-radius:22px;display:block}
+
     section{padding:65px 0}
     .section-title{font-size:32px;margin-bottom:12px}
     .section-sub{color:#94a3b8;margin-bottom:32px}
+
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:rgba(15,23,42,.86);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:24px}
+    .card{
+      background:rgba(15,23,42,.86);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:18px;
+      padding:24px
+    }
     .card h3{color:#93c5fd;margin-bottom:10px}
     .card p,.card li{color:#b9c7d8;font-size:15px}
+
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .stat{text-align:center;background:rgba(37,99,235,.12);border:1px solid rgba(96,165,250,.25);padding:24px;border-radius:18px}
+    .stat{
+      text-align:center;
+      background:rgba(37,99,235,.12);
+      border:1px solid rgba(96,165,250,.25);
+      padding:24px;
+      border-radius:18px
+    }
     .stat h2{font-size:34px;color:#60a5fa}
+
+    .summary-list{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:20px
+    }
+    .summary-item{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      padding:16px;
+      color:#dbeafe
+    }
+
     .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);color:#dbeafe;font-size:14px}
+    .skill{
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.08);
+      color:#dbeafe;
+      font-size:14px
+    }
+
     .timeline{display:grid;gap:18px}
     .job{border-left:3px solid #2563eb}
     .job small{color:#93c5fd}
     ul{padding-left:18px}
+
     .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    footer{text-align:center;padding:28px;color:#94a3b8;border-top:1px solid rgba(255,255,255,.08)}
+
+    footer{
+      text-align:center;
+      padding:28px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,.08)
+    }
+
     @media(max-width:850px){
       .hero,.contact{grid-template-columns:1fr}
-      .grid,.stats{grid-template-columns:1fr}
+      .grid,.stats,.summary-list{grid-template-columns:1fr}
       h1{font-size:42px}
       .nav-links{display:none}
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -74,20 +164,32 @@
 
   <section class="hero">
     <div>
-      <div class="badge">Dubai, UAE • Open to IT Infrastructure & Cloud Roles</div>
+      <div class="badge">Dubai, UAE • Available in 30 Days • Open to IT Infrastructure & Cloud Roles</div>
+
       <h1>Hi, I'm <span>Akhil Dev</span></h1>
-      <div class="subtitle">Systems Engineer | Azure Cloud | Microsoft 365 | Infrastructure Specialist</div>
+
+      <div class="subtitle">
+        Systems Engineer at Al-Futtaim Group | Azure Cloud | Microsoft 365 | Infrastructure Specialist
+      </div>
+
       <p class="desc">
         Microsoft-certified IT professional with 6+ years of experience in enterprise infrastructure,
         Microsoft 365, Azure cloud, Windows Server, virtualization, monitoring, endpoint security,
-        and IT operations support.
+        data center operations, and IT service delivery.
       </p>
+
+      <p class="cert-line">
+        🏅 Azure Administrator Associate • Azure Virtual Desktop Specialty • MCSE • CCNA
+      </p>
+
       <div class="buttons">
         <a class="btn primary" href="Akhil_Dev_CV.pdf" target="_blank">Download CV</a>
         <a class="btn secondary" href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/akhildev2580" target="_blank">GitHub</a>
         <a class="btn secondary" href="mailto:akhildev2580@gmail.com">Email Me</a>
       </div>
     </div>
+
     <div class="photo-card">
       <img src="profile.jpeg" alt="Akhil Dev Profile Photo">
     </div>
@@ -104,94 +206,162 @@
     <h2 class="section-title">About Me</h2>
     <p class="section-sub">
       I specialize in managing hybrid IT infrastructure, Microsoft enterprise platforms, cloud operations,
-      monitoring, incident response, and automation.
+      monitoring, incident response, endpoint security, automation, and enterprise IT support.
     </p>
+
     <div class="grid">
       <div class="card">
         <h3>Cloud & Infrastructure</h3>
-        <p>Azure administration, hybrid cloud, Windows Server, VMware, Hyper-V, backup, disaster recovery, and high availability.</p>
+        <p>
+          Azure administration, hybrid cloud, Windows Server, VMware, Hyper-V, backup,
+          disaster recovery, and high availability.
+        </p>
       </div>
+
       <div class="card">
         <h3>Microsoft 365</h3>
-        <p>Exchange Online, Teams, SharePoint, Intune, endpoint compliance, identity, access control, MFA, and Conditional Access.</p>
+        <p>
+          Exchange Online, Teams, SharePoint, Intune, endpoint compliance, identity,
+          access control, MFA, and Conditional Access.
+        </p>
       </div>
+
       <div class="card">
         <h3>Operations & Monitoring</h3>
-        <p>SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, DCIM, incident management, SLA support, and RCA follow-up.</p>
+        <p>
+          SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, DCIM, incident management,
+          SLA support, and RCA follow-up.
+        </p>
       </div>
+    </div>
+
+    <div class="summary-list">
+      <div class="summary-item">✔ 6+ Years Enterprise IT Experience</div>
+      <div class="summary-item">✔ 10,000+ Users Supported</div>
+      <div class="summary-item">✔ 4,500+ Servers & VMs Managed</div>
+      <div class="summary-item">✔ Operations Across 20+ Countries</div>
+      <div class="summary-item">✔ 130+ Automations Developed</div>
+      <div class="summary-item">✔ Microsoft Certified Professional</div>
     </div>
   </section>
 
   <section id="skills">
     <h2 class="section-title">Technical Skills</h2>
     <p class="section-sub">Core technologies and tools I work with.</p>
+
     <div class="skills">
       <span class="skill">Microsoft Azure</span>
+      <span class="skill">Azure IaaS</span>
       <span class="skill">Azure Virtual Desktop</span>
+      <span class="skill">Azure Site Recovery</span>
+      <span class="skill">Azure Monitor</span>
       <span class="skill">Microsoft 365</span>
       <span class="skill">Exchange Online</span>
-      <span class="skill">SharePoint</span>
-      <span class="skill">Teams</span>
-      <span class="skill">Intune</span>
+      <span class="skill">SharePoint Online</span>
+      <span class="skill">Microsoft Teams</span>
+      <span class="skill">OneDrive</span>
+      <span class="skill">Microsoft Intune</span>
+      <span class="skill">Microsoft Defender</span>
       <span class="skill">Windows Server 2012-2022</span>
       <span class="skill">Active Directory</span>
-      <span class="skill">Azure AD / Entra ID</span>
+      <span class="skill">Microsoft Entra ID</span>
+      <span class="skill">Azure AD Connect</span>
       <span class="skill">Group Policy</span>
-      <span class="skill">DNS / DHCP</span>
-      <span class="skill">VMware</span>
+      <span class="skill">DNS</span>
+      <span class="skill">DHCP</span>
+      <span class="skill">Conditional Access</span>
+      <span class="skill">MFA</span>
+      <span class="skill">VMware vSphere</span>
       <span class="skill">Hyper-V</span>
       <span class="skill">SCCM</span>
       <span class="skill">WSUS</span>
       <span class="skill">Ivanti</span>
       <span class="skill">Veeam</span>
       <span class="skill">Acronis</span>
-      <span class="skill">Azure Site Recovery</span>
       <span class="skill">SolarWinds NPM</span>
       <span class="skill">SCOM</span>
       <span class="skill">Dynatrace</span>
+      <span class="skill">DCIM</span>
       <span class="skill">PowerShell</span>
+      <span class="skill">Batch Scripting</span>
       <span class="skill">Power Automate</span>
       <span class="skill">ITIL</span>
+      <span class="skill">Incident Management</span>
+      <span class="skill">Patch Management</span>
+      <span class="skill">Backup & Disaster Recovery</span>
     </div>
   </section>
 
   <section>
     <h2 class="section-title">Certifications</h2>
-    <p class="section-sub">Professional certifications and training.</p>
+    <p class="section-sub">Professional certifications and technical learning.</p>
+
     <div class="grid">
-      <div class="card"><h3>Microsoft Certified</h3><p>Azure Administrator Associate</p></div>
-      <div class="card"><h3>Microsoft Certified</h3><p>Azure Virtual Desktop Specialty</p></div>
-      <div class="card"><h3>Microsoft</h3><p>Microsoft Certified Solutions Expert - MCSE</p></div>
-      <div class="card"><h3>Cisco</h3><p>CCNA Routing and Switching</p></div>
-      <div class="card"><h3>AWS</h3><p>Identity and Access Management - IAM</p></div>
-      <div class="card"><h3>ICSI UK</h3><p>Certified Network Security Specialist</p></div>
+      <div class="card">
+        <h3>Microsoft Certified</h3>
+        <p>Azure Administrator Associate</p>
+      </div>
+
+      <div class="card">
+        <h3>Microsoft Certified</h3>
+        <p>Azure Virtual Desktop Specialty</p>
+      </div>
+
+      <div class="card">
+        <h3>Microsoft</h3>
+        <p>Microsoft Certified Solutions Expert - MCSE</p>
+      </div>
+
+      <div class="card">
+        <h3>Microsoft 365</h3>
+        <p>Microsoft 365 Administration</p>
+      </div>
+
+      <div class="card">
+        <h3>Cisco</h3>
+        <p>CCNA Routing and Switching</p>
+      </div>
+
+      <div class="card">
+        <h3>AWS</h3>
+        <p>Identity and Access Management - IAM</p>
+      </div>
+
+      <div class="card">
+        <h3>ICSI UK</h3>
+        <p>Certified Network Security Specialist</p>
+      </div>
     </div>
   </section>
 
   <section id="experience">
     <h2 class="section-title">Professional Experience</h2>
-    <p class="section-sub">Enterprise infrastructure and IT operations background.</p>
+    <p class="section-sub">Enterprise infrastructure, cloud, monitoring, and IT operations background.</p>
 
     <div class="timeline">
+
       <div class="card job">
         <h3>Systems Engineer - Al-Futtaim Group</h3>
-        <small>May 2022 - Present | Dubai, UAE</small>
+        <small>May 2022 - Present | Dubai, United Arab Emirates</small>
         <ul>
-          <li>Manage data center, server, storage, cloud, and hybrid infrastructure operations.</li>
-          <li>Administer Microsoft 365 services including Exchange Online, Teams, SharePoint, and Intune.</li>
-          <li>Support Azure cloud infrastructure, Active Directory, DNS, DHCP, Group Policy, and enterprise monitoring.</li>
-          <li>Handle Tier 2/3 incidents, performance monitoring, patching, security compliance, and RCA activities.</li>
+          <li>Manage and monitor data center, server, storage, networking, cloud, and hybrid infrastructure operations.</li>
+          <li>Administer Microsoft 365 services including Exchange Online, Microsoft Teams, SharePoint, OneDrive, and Intune.</li>
+          <li>Support Azure cloud infrastructure, Active Directory, DNS, DHCP, Group Policy, and enterprise monitoring platforms.</li>
+          <li>Provide Tier 2/3 technical support for business-critical systems and handle high-priority incidents.</li>
+          <li>Perform patch management, vulnerability remediation, security compliance checks, and RCA activities.</li>
+          <li>Use enterprise monitoring tools including SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, Uptime Robot, and DCIM.</li>
           <li>Built automation solutions using PowerShell, Batch scripting, and Power Automate to reduce manual effort.</li>
         </ul>
       </div>
 
       <div class="card job">
         <h3>Systems Engineer - Smart Vision for Information Systems</h3>
-        <small>August 2021 - May 2022 | Abu Dhabi, UAE</small>
+        <small>August 2021 - May 2022 | Abu Dhabi, United Arab Emirates</small>
         <ul>
           <li>Managed Windows Server, Active Directory, Exchange, SharePoint, and infrastructure availability.</li>
-          <li>Provided 2nd and 3rd level technical support for systems, applications, and end users.</li>
+          <li>Provided 2nd and 3rd level support for systems, applications, infrastructure, and end users.</li>
           <li>Implemented backup, redundancy, patching, and security maintenance activities.</li>
+          <li>Monitored application and system performance and supported troubleshooting activities.</li>
         </ul>
       </div>
 
@@ -201,61 +371,112 @@
         <ul>
           <li>Provided first-line IT support for hardware, software, network, and server-related issues.</li>
           <li>Supported Windows Server administration, Active Directory, updates, backups, and troubleshooting.</li>
+          <li>Installed, configured, and maintained systems, software applications, peripherals, and network components.</li>
         </ul>
       </div>
+
     </div>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Projects & Automation</h2>
     <p class="section-sub">Selected operational improvements and technical initiatives.</p>
+
     <div class="grid">
       <div class="card">
         <h3>DCOPS Automation Suite</h3>
-        <p>Created 130+ automation workflows using Power Automate, PowerShell, and Batch scripting to reduce manual operations work.</p>
+        <p>
+          Created 130+ automation workflows using Power Automate, PowerShell, and Batch scripting
+          to reduce repetitive operational tasks.
+        </p>
       </div>
+
       <div class="card">
         <h3>Infrastructure Monitoring</h3>
-        <p>Worked with tools such as SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, Uptime Robot, and DCIM for proactive monitoring.</p>
+        <p>
+          Worked with SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, Uptime Robot, and DCIM
+          for proactive monitoring and incident response.
+        </p>
       </div>
+
       <div class="card">
         <h3>Daily Operations Reports</h3>
-        <p>Built automated reporting solutions for monitoring alerts, email counts, infrastructure status, and operations handover support.</p>
+        <p>
+          Built automated reporting solutions for monitoring alerts, email counts, infrastructure status,
+          file movement checks, and shift handover support.
+        </p>
       </div>
+
       <div class="card">
         <h3>Azure & Microsoft 365 Support</h3>
-        <p>Supported hybrid cloud operations, Microsoft 365 administration, endpoint compliance, and enterprise user access management.</p>
+        <p>
+          Supported hybrid cloud operations, Microsoft 365 administration, endpoint compliance,
+          and enterprise user access management.
+        </p>
       </div>
+
       <div class="card">
         <h3>Windows Server Upgrades</h3>
-        <p>Participated in Windows Server upgrades, patch management, hardware refresh, and zero-downtime migration activities.</p>
+        <p>
+          Participated in Windows Server upgrades, patch management, hardware refresh,
+          and migration activities while supporting business continuity.
+        </p>
       </div>
+
       <div class="card">
         <h3>Data Center Operations</h3>
-        <p>Supported 24x7 enterprise operations across servers, storage, monitoring, backup, disaster recovery, and critical incidents.</p>
+        <p>
+          Supported 24x7 enterprise operations across servers, storage, monitoring,
+          backup, disaster recovery, and critical incidents.
+        </p>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <h2 class="section-title">Contact</h2>
-    <p class="section-sub">Available for Systems Engineer, Infrastructure Engineer, Cloud Administrator, and Microsoft 365 roles.</p>
+    <p class="section-sub">
+      Available for Systems Engineer, Infrastructure Engineer, Cloud Administrator,
+      Microsoft 365 Administrator, and IT Operations roles.
+    </p>
+
     <div class="contact">
       <div class="card">
         <h3>Email</h3>
         <p><a href="mailto:akhildev2580@gmail.com">akhildev2580@gmail.com</a></p>
       </div>
+
       <div class="card">
         <h3>Phone</h3>
         <p><a href="tel:+971509385772">+971 509385772</a></p>
       </div>
+
       <div class="card">
         <h3>LinkedIn</h3>
-        <p><a href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank">linkedin.com/in/akhil-dev-a8011b1a0</a></p>
+        <p>
+          <a href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank">
+            linkedin.com/in/akhil-dev-a8011b1a0
+          </a>
+        </p>
       </div>
+
+      <div class="card">
+        <h3>GitHub</h3>
+        <p>
+          <a href="https://github.com/akhildev2580" target="_blank">
+            github.com/akhildev2580
+          </a>
+        </p>
+      </div>
+
       <div class="card">
         <h3>Location</h3>
         <p>Dubai, United Arab Emirates</p>
+      </div>
+
+      <div class="card">
+        <h3>Availability</h3>
+        <p>Available in 30 days</p>
       </div>
     </div>
   </section>
