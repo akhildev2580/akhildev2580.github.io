@@ -76,6 +76,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     .photo-card img{width:100%;border-radius:22px;display:block}
 
     section{padding:65px 0}
+    section{
+    scroll-margin-top:90px;
+}
     .section-title{font-size:32px;margin-bottom:12px}
     .section-sub{color:#94a3b8;margin-bottom:32px}
 
@@ -364,10 +367,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     transform:translateY(-4px) scale(1.08);
 }
 
-.whatsapp{background:#25D366;}
-.email{background:#2563eb;}
-.linkedin{background:#0077B5;}
-.cv{background:#f97316;}
+.whatsapp{
+    background:#25D366dd;
+    backdrop-filter:blur(10px);
+}
+
+.email{
+    background:#2563ebdd;
+    backdrop-filter:blur(10px);
+}
+
+.linkedin{
+    background:#0077B5dd;
+    backdrop-filter:blur(10px);
+}
+
+.cv{
+    background:#f97316dd;
+    backdrop-filter:blur(10px);
+}
     .scroll-top{
     position:fixed;
     left:20px;
@@ -409,20 +427,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         grid-column:span 1;
     }
   .floating-contact{
-    right:12px;
-    bottom:120px;
+    right:10px;
+    bottom:80px;
     gap:10px;
 }
 
 .float-btn{
-    width:48px;
-    height:48px;
-    font-size:20px;
+    width:42px;
+    height:42px;
+    font-size:18px;
 }
 
 .scroll-top{
     left:15px;
-    bottom:120px;
+    bottom:60px;
     width:45px;
     height:45px;
 }
@@ -551,6 +569,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   .cv{
       display:none;
   }
+  .scroll-top{
+    display:none;
+}
 }
    
   </style>
