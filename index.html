@@ -335,6 +335,37 @@
     border-radius:999px;
     font-size:13px;
 }
+    .floating-contact{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    z-index:999;
+}
+
+.float-btn{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:24px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.float-btn:hover{
+    transform:translateY(-4px) scale(1.08);
+}
+
+.whatsapp{background:#25D366;}
+.email{background:#2563eb;}
+.linkedin{background:#0077B5;}
+.cv{background:#f97316;}
 @media(max-width:850px){
     .cert-grid{
         grid-template-columns:1fr;
@@ -457,6 +488,8 @@
 }
    
   </style>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -929,6 +962,25 @@
 <footer>
   © 2026 Akhil Dev.
 </footer>
+  <div class="floating-contact">
+
+    <a class="float-btn whatsapp" href="https://wa.me/971509385772" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a class="float-btn email" href="mailto:akhildev2580@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+    <a class="float-btn linkedin" href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a class="float-btn cv" href="Akhil_Dev_CV.pdf" target="_blank" title="Download CV">
+        <i class="fas fa-file-download"></i>
+    </a>
+
+</div>
 
 </body>
 </html>
