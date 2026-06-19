@@ -176,9 +176,17 @@
 }
  .cert-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(12,1fr);
     gap:25px;
     margin-top:40px;
+}
+
+.cert-card{
+    grid-column:span 4;
+}
+
+.cert-card:nth-child(n+4){
+    grid-column:span 3;
 }
 
 .cert-card{
@@ -219,6 +227,10 @@
 @media(max-width:850px){
     .cert-grid{
         grid-template-columns:1fr;
+    }
+
+    .cert-card{
+        grid-column:span 1;
     }
 }
 @media(max-width:850px){
