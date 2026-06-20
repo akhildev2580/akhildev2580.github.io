@@ -25,7 +25,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     }
 
     nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-    .logo{font-weight:800;font-size:22px;color:#60a5fa}
+    .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#60a5fa;
+    font-weight:800;
+    font-size:22px;
+}
+
+.logo img{
+    width:36px;
+    height:36px;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.logo span{
+    color:#60a5fa;
+    font-size:22px;
+    font-weight:800;
+}
     .nav-links{display:flex;gap:22px;font-size:14px;color:#b9c7d8}
     .nav-links a:hover{color:#60a5fa}
 
@@ -476,7 +496,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <header>
   <div class="container">
     <nav>
-      <div class="logo">Akhil Dev</div>
+      <div class="logo">
+    <img src="favicon.png" alt="AD Logo">
+    <span>Akhil Dev</span>
+</div>
       <div class="nav-links">
         <a href="#about">About</a>
 <a href="#skills">Skills</a>
