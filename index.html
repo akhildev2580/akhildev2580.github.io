@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhil Dev | Systems Engineer</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -76,9 +74,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     .photo-card img{width:100%;border-radius:22px;display:block}
 
     section{padding:65px 0}
-    section{
-    scroll-margin-top:90px;
-}
     .section-title{font-size:32px;margin-bottom:12px}
     .section-sub{color:#94a3b8;margin-bottom:32px}
 
@@ -340,153 +335,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     border-radius:999px;
     font-size:13px;
 }
-    .floating-contact{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    z-index:999;
-}
-
-.float-btn{
-    width:56px;
-    height:56px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-size:24px;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-    transition:.3s;
-}
-
-.float-btn:hover{
-    transform:translateY(-4px) scale(1.08);
-}
-
-.whatsapp{
-    background:#25D366dd;
-    backdrop-filter:blur(10px);
-}
-
-.email{
-    background:#2563ebdd;
-    backdrop-filter:blur(10px);
-}
-
-.linkedin{
-    background:#0077B5dd;
-    backdrop-filter:blur(10px);
-}
-
-.cv{
-    background:#f97316dd;
-    backdrop-filter:blur(10px);
-}
-    .scroll-top{
-    position:fixed;
-    left:20px;
-    bottom:25px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#2563eb;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-    z-index:999;
-    box-shadow:0 8px 20px rgba(37,99,235,.3);
-    transition:.3s;
-}
-
-.scroll-top:hover{
-    transform:translateY(-4px);
-    background:#60a5fa;
-    color:white;
-}
-    @keyframes floatButton{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-4px);}
-    100%{transform:translateY(0);}
-}
-
-.whatsapp{
-    animation:floatButton 3s ease-in-out infinite;
-}
-    .premium-hero{
-    min-height:85vh;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    align-items:center;
-    gap:50px;
-    padding:40px 0;
-}
-
-.hero-small{
-    color:#60a5fa;
-    font-size:16px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:10px;
-}
-
-.hero-text h1{
-    font-size:72px;
-    line-height:1;
-    margin-bottom:10px;
-    color:#ffffff;
-}
-
-.hero-text h2{
-    font-size:34px;
-    color:#60a5fa;
-    margin-bottom:18px;
-}
-
-.hero-tagline{
-    font-size:20px;
-    color:#cbd5e1;
-    max-width:650px;
-    margin-bottom:25px;
-    line-height:1.8;
-}
-
-.hero-highlights{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-bottom:30px;
-}
-
-.hero-highlights span{
-    padding:8px 14px;
-    border-radius:999px;
-    border:1px solid rgba(96,165,250,.25);
-    background:rgba(96,165,250,.08);
-    color:#bfdbfe;
-    font-size:14px;
-}
-
-.hero-buttons{
-    margin-top:10px;
-}
-
-.hero-image{
-    display:flex;
-    justify-content:center;
-}
-
-.hero-image img{
-    width:100%;
-    max-width:500px;
-    border-radius:28px;
-    box-shadow:0 20px 50px rgba(37,99,235,.25);
-}
 @media(max-width:850px){
     .cert-grid{
         grid-template-columns:1fr;
@@ -495,24 +343,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     .cert-card{
         grid-column:span 1;
     }
-  .floating-contact{
-    right:10px;
-    bottom:80px;
-    gap:10px;
-}
-
-.float-btn{
-    width:42px;
-    height:42px;
-    font-size:18px;
-}
-
-.scroll-top{
-    left:15px;
-    bottom:60px;
-    width:45px;
-    height:45px;
-}
 }
 @media(max-width:850px){
 
@@ -623,52 +453,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   .timeline-card h3{
       font-size:20px;
   }
-  .floating-contact{
-      right:10px;
-      bottom:95px;
-      gap:8px;
-}
 
-  .float-btn{
-      width:38px;
-      height:38px;
-      font-size:16px;
-}
-
-  .cv{
-      display:none;
-  }
-  .scroll-top{
-    display:none;
-}
-  .premium-hero{
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:35px;
-    padding:40px 0;
-}
-
-.hero-text h1{
-    font-size:48px;
-}
-
-.hero-text h2{
-    font-size:24px;
-}
-
-.hero-tagline{
-    font-size:17px;
-    margin:auto;
-    margin-bottom:20px;
-}
-
-.hero-highlights{
-    justify-content:center;
-}
-
-.hero-image img{
-    max-width:320px;
-}
 }
    
   </style>
@@ -694,46 +479,38 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <main class="container">
 
-  <section class="hero premium-hero">
+  <section class="hero">
+    <div>
+      <div class="badge">Dubai, UAE • Available in 30 Days • Open to IT Infrastructure & Cloud Roles</div>
 
-  <div class="hero-text">
-    <p class="hero-small">Hello, I'm</p>
+      <h1>Hi, I'm <span>Akhil Dev</span></h1>
 
-    <h1>Akhil Dev</h1>
+      <div class="subtitle">
+        Systems Engineer at Al-Futtaim Group | Azure Cloud | Microsoft 365 | Infrastructure Specialist
+      </div>
 
-    <h2>Systems Engineer</h2>
+      <p class="desc">
+        Microsoft-certified IT professional with 6+ years of experience in enterprise infrastructure,
+        Microsoft 365, Azure cloud, Windows Server, virtualization, monitoring, endpoint security,
+        data center operations, and IT service delivery.
+      </p>
 
-    <p class="hero-tagline">
-      Systems Engineer specializing in Azure, Microsoft 365, infrastructure, and automation.
-    </p>
+      <p class="cert-line">
+        🏅 Azure Administrator Associate • Azure Virtual Desktop Specialty • MCSE • CCNA • Microsoft 365
+      </p>
 
-    <div class="hero-highlights">
-      <span>Azure Cloud</span>
-      <span>Microsoft 365</span>
-      <span>Infrastructure</span>
-      <span>Automation</span>
+      <div class="buttons">
+        <a class="btn primary" href="Akhil_Dev_CV.pdf" target="_blank">Download CV</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/akhildev2580" target="_blank">GitHub</a>
+        <a class="btn secondary" href="mailto:akhildev2580@gmail.com">Email Me</a>
+      </div>
     </div>
 
-    <div class="buttons hero-buttons">
-      <a class="btn primary" href="Akhil_Dev_CV.pdf" target="_blank">
-        <i class="fas fa-download"></i> Download CV
-      </a>
-
-      <a class="btn secondary" href="#contact">
-        <i class="fas fa-envelope"></i> Contact Me
-      </a>
-
-      <a class="btn secondary" href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
+    <div class="photo-card">
+      <img src="profile.jpg" alt="Akhil Dev Profile Photo">
     </div>
-  </div>
-
-  <div class="hero-image">
-    <img src="hero-profile.png" alt="Akhil Dev - Systems Engineer">
-  </div>
-
-</section>
+  </section>
 
   <section class="stats">
     <div class="stat"><h2>6+</h2><p>Years Experience</p></div>
@@ -1150,30 +927,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </main>
 
 <footer>
-    <p>© 2026 Akhil Dev | Systems Engineer</p>
-    <p>Azure Cloud • Microsoft 365 • Infrastructure Specialist</p>
+  © 2026 Akhil Dev.
 </footer>
-  <div class="floating-contact">
 
-    <a class="float-btn whatsapp" href="https://wa.me/971509385772" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <a class="float-btn email" href="mailto:akhildev2580@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-    </a>
-
-    <a class="float-btn linkedin" href="https://www.linkedin.com/in/akhil-dev-a8011b1a0" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-
-    <a class="float-btn cv" href="Akhil_Dev_CV.pdf" target="_blank" title="Download CV">
-        <i class="fas fa-file-download"></i>
-    </a>
-
-</div>
-<a href="#" class="scroll-top" title="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-</a>
 </body>
 </html>
