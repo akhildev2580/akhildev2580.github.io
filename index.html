@@ -367,6 +367,51 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 .hero-buttons i{
     font-size:18px;
 }
+    .floating-social{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:999;
+}
+
+.floating-social a{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#fff;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.floating-social a:hover{
+    transform:translateY(-5px) scale(1.08);
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.linkedin{
+    background:#0077B5;
+}
+
+.gmail{
+    background:#EA4335;
+}
+
+@media(max-width:850px){
+    .floating-social{
+        display:none;
+    }
+}
 @media(max-width:850px){
     .cert-grid{
         grid-template-columns:1fr;
@@ -1007,6 +1052,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         © 2026 Akhil Dev.
     </p>
 </footer>
+  <div class="floating-social">
+
+    <a href="https://wa.me/971509385772"
+       target="_blank"
+       class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/akhil-dev-a8011b1a0"
+       target="_blank"
+       class="linkedin">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="mailto:contact@akhildev.cloud"
+       class="gmail">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+</div>
 
 </body>
 </html>
