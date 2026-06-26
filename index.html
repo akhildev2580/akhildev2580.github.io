@@ -215,26 +215,55 @@ margin:0 auto 14px;
     font-size:14px;
 }
 
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
     .stat{
+    position:relative;
+    overflow:hidden;
+
     text-align:center;
-    background:rgba(37,99,235,.12);
+
+    background:linear-gradient(
+        180deg,
+        rgba(18,34,64,.95),
+        rgba(11,25,47,.95)
+    );
+
     border:1px solid rgba(96,165,250,.25);
-    padding:32px 24px;
+
+    padding:26px 22px;
+
     border-radius:18px;
+
     transition:.3s;
 }
-
-.stat:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(37,99,235,.2);
+    .stat:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 18px 40px rgba(37,99,235,.25);
     border-color:#60a5fa;
 }
-    .stat h2{font-size:34px;color:#60a5fa}
+
+.stat h2{
+    font-size:46px;
+    font-weight:800;
+    letter-spacing:-1px;
+
+    color:#60a5fa;
+
+    text-shadow:0 0 18px rgba(96,165,250,.25);
+
+    margin-top:12px;
+    margin-bottom:6px;
+}
+    .stat p{
+    font-size:19px;
+    font-weight:500;
+    color:#d9e8ff;
+}
+
     .stat-icon{
-    width:54px;
-    height:54px;
-    margin:0 auto 16px;
+    width:62px;
+    height:62px;
+    margin:0 auto 18px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -242,17 +271,34 @@ margin:0 auto 14px;
     background:rgba(96,165,250,.12);
     border:1px solid rgba(96,165,250,.25);
     color:#60a5fa;
-    font-size:22px;
+    font-size:26px;
     transition:.3s;
 }
 
 .stat:hover .stat-icon{
-    transform:translateY(-3px) scale(1.08);
+    transform:translateY(-5px) scale(1.12) rotate(-5deg);
     background:#2563eb;
     color:#fff;
-    box-shadow:0 0 25px rgba(37,99,235,.45);
+    box-shadow:0 0 30px rgba(37,99,235,.45);
+}
+.stat::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:3px;
+
+    background:#60a5fa;
+
+    transition:.5s;
 }
 
+.stat:hover::before{
+    left:120%;
+}
     .summary-list{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -886,7 +932,7 @@ margin:0 auto 14px;
   <section class="stats">
     <div class="stat">
     <div class="stat-icon">
-        <i class="fas fa-briefcase"></i>
+        <i class="fas fa-award"></i>
     </div>
 
     <h2><span class="counter" data-target="6">0</span>+</h2>
@@ -895,7 +941,7 @@ margin:0 auto 14px;
 
     <div class="stat">
     <div class="stat-icon">
-        <i class="fas fa-users"></i>
+        <i class="fas fa-user-shield"></i>
     </div>
 
     <h2><span class="counter" data-target="10000">0</span>+</h2>
@@ -904,7 +950,7 @@ margin:0 auto 14px;
 
     <div class="stat">
     <div class="stat-icon">
-        <i class="fas fa-server"></i>
+        <i class="fas fa-database"></i>
     </div>
 
     <h2><span class="counter" data-target="4500">0</span>+</h2>
@@ -913,7 +959,7 @@ margin:0 auto 14px;
 
     <div class="stat">
     <div class="stat-icon">
-        <i class="fas fa-gears"></i>
+        <i class="fas fa-wand-magic-sparkles"></i>
     </div>
 
     <h2><span class="counter" data-target="130">0</span>+</h2>
@@ -1542,31 +1588,24 @@ document.addEventListener("DOMContentLoaded", function () {
 function animateCounter(counter){
 
     const target = Number(counter.dataset.target);
+    const duration = 1500;
+    const start = performance.now();
 
-    let current = 0;
+    function update(now){
 
-    const increment = Math.max(1, Math.ceil(target / 35));
+        const progress = Math.min((now - start) / duration, 1);
 
-    const update = () => {
+        counter.textContent =
+            Math.floor(progress * target).toLocaleString();
 
-        current += increment;
-
-        if(current < target){
-
-            counter.textContent = current.toLocaleString();
-
+        if(progress < 1){
             requestAnimationFrame(update);
-
         }else{
-
             counter.textContent = target.toLocaleString();
-
         }
+    }
 
-    };
-
-    update();
-
+    requestAnimationFrame(update);
 }
 
 let statsAnimated = false;
