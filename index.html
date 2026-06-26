@@ -285,10 +285,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     position:absolute;
     left:22px;
     top:0;
-    bottom:0;
+    bottom:8px;
     width:3px;
     background:linear-gradient(#60a5fa,#2563eb);
     border-radius:10px;
+}
+    .experience-timeline::after{
+    content:"";
+    position:absolute;
+    left:18px;
+    bottom:-6px;
+    width:12px;
+    height:12px;
+    background:#2563eb;
+    border-radius:50%;
+    box-shadow:0 0 18px rgba(37,99,235,.75);
 }
 
 .timeline-item{
@@ -361,8 +372,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 .company-header img{
-    width:52px;
-    height:52px;
+    width:58px;
+    height:58px;
     object-fit:contain;
     background:#fff;
     padding:6px;
@@ -379,6 +390,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     color:#cbd5e1;
     margin-bottom:10px;
     line-height:1.7;
+}
+    .extra-content{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .4s ease, opacity .3s ease;
+}
+
+.timeline-card.expanded .extra-content{
+    max-height:1000px;
+    opacity:1;
+}
+
+.show-more-btn{
+    margin-top:10px;
+    margin-left:20px;
+    background:none;
+    border:none;
+    color:#60a5fa;
+    font-weight:700;
+    cursor:pointer;
+    font-size:15px;
+    padding:0;
+    transition:.3s;
+}
+
+.show-more-btn:hover{
+    text-decoration:underline;
 }
 
 .tech-tags{
@@ -587,8 +626,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     padding:22px;
   }
   .experience-timeline::before{
-      left:18px;
-  }
+    left:18px;
+    bottom:8px;
+}
+  .experience-timeline::after{
+    left:14px;
+}
 
   .timeline-item{
       grid-template-columns:50px 1fr;
@@ -608,6 +651,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   .timeline-card h3{
       font-size:20px;
   }
+  .show-more-btn{
+    font-size:14px;
+    margin-left:16px;
+}
 
 }
    
@@ -927,25 +974,30 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </div>
 
                 <ul>
-                    <li>Manage and monitor hybrid data center infrastructure supporting 20,000+ users and 4,500+ servers and virtual machines across on-premises, Azure cloud, and hybrid environments spanning 20+ countries, ensuring 24×7 availability and optimal performance. </li>
+    <li>Manage and monitor hybrid data center infrastructure supporting 20,000+ users and 4,500+ servers and virtual machines across on-premises, Azure cloud, and hybrid environments spanning 20+ countries, ensuring 24×7 availability and optimal performance.</li>
 
-<li>Administer Microsoft 365 suite — Exchange Online, Teams, SharePoint, OneDrive, and Intune — ensuring enterprise-grade compliance, user access control, and endpoint security at scale. </li>
+    <li>Administer Microsoft 365 suite — Exchange Online, Teams, SharePoint, OneDrive, and Intune — ensuring enterprise-grade compliance, user access control, and endpoint security at scale.</li>
 
-<li>Built 130+ automation workflows using PowerShell, Batch scripting, and Power Automate, significantly reducing manual operational effort across Central Operations and improving shift handover efficiency. </li>
+    <li>Built 130+ automation workflows using PowerShell, Batch scripting, and Power Automate, significantly reducing manual operational effort across Central Operations and improving shift handover efficiency.</li>
 
-<li>Design, deploy, and troubleshoot Azure Virtual Desktop (AVD) environments — Personal and Pooled desktops supporting remote workforce operations and application virtualization across the enterprise. </li>
+    <li>Design, deploy, and troubleshoot Azure Virtual Desktop (AVD) environments — Personal and Pooled desktops supporting remote workforce operations and application virtualization across the enterprise.</li>
 
-<li>Enforce patch management policies via SCCM, WSUS, and Ivanti across 4,500+ endpoints; conduct regular vulnerability assessments and root cause analysis to maintain enterprise-grade security posture. </li>
+    <li>Enforce patch management policies via SCCM, WSUS, and Ivanti across 4,500+ endpoints; conduct regular vulnerability assessments and root cause analysis to maintain enterprise-grade security posture.</li>
+</ul>
 
-<li>Execute proactive infrastructure monitoring using SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, and DCIM, providing comprehensive visibility and predictive analytics to prevent recurring incidents. </li>
+<div class="extra-content">
+    <ul>
+        <li>Execute proactive infrastructure monitoring using SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, and DCIM, providing comprehensive visibility and predictive analytics to prevent recurring incidents.</li>
 
-<li>Deliver Tier 2/3 support for critical business systems, P1 incident response, and complex network and server troubleshooting while maintaining strict SLA compliance. </li>
+        <li>Deliver Tier 2/3 support for critical business systems, P1 incident response, and complex network and server troubleshooting while maintaining strict SLA compliance.</li>
 
-<li>Manage Azure cloud infrastructure including IaaS provisioning, Azure Site Recovery, VNet, ExpressRoute, Azure AD Connect, Conditional Access, and MFA enforcement across hybrid environments. </li>
+        <li>Manage Azure cloud infrastructure including IaaS provisioning, Azure Site Recovery, VNet, ExpressRoute, Azure AD Connect, Conditional Access, and MFA enforcement across hybrid environments.</li>
 
-<li>Plan and execute zero-downtime Windows Server upgrades to 2019/2022, lead hardware refresh initiatives, and administer Intune MDM for secure mobile access and endpoint compliance</li>
+        <li>Plan and execute zero-downtime Windows Server upgrades to 2019/2022, lead hardware refresh initiatives, and administer Intune MDM for secure mobile access and endpoint compliance.</li>
+    </ul>
+</div>
 
-                </ul>
+<button class="show-more-btn">Show More ▼</button>
 
                 <div class="tech-tags">
                     <span>Azure</span>
@@ -979,10 +1031,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </div>
 
                 <ul>
-                    <li>Managed Windows Server, Active Directory, Exchange, SharePoint, and infrastructure availability.</li>
-                    <li>Provided 2nd and 3rd level support for systems, applications, infrastructure, and end users.</li>
-                    <li>Implemented backup, redundancy, security maintenance, patching, and performance monitoring activities.</li>
-                    <li>Monitored application and system performance, identified bottlenecks, and supported troubleshooting activities.</li>
+                    <li>Administered on-premises Windows Server environments including Active Directory, Exchange, SharePoint, DNS, and DHCP, ensuring high availability, reliability, and optimal performance. </li>
+
+<li>Delivered 2nd and 3rd level technical support for complex infrastructure, application, and end-user issues, minimizing downtime through proactive monitoring and rapid resolution. </li>
+
+<li>Implemented backup, redundancy, and security maintenance strategies — including monthly patch cycles via Dameware remote support — to safeguard critical data and maintain system integrity. </li>
+
+<li>Monitored and tested application performance, identified bottlenecks, and collaborated with development teams to deploy effective, long-term solutions. </li>
+
+<li>Upgraded operating systems and applied latest hotfixes to enhance system performance, security, and compliance. </li>
+
                 </ul>
 
                 <div class="tech-tags">
@@ -1015,10 +1073,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </div>
 
                 <ul>
-                    <li>Provided first-line IT support for hardware, software, network, and server-related issues.</li>
-                    <li>Installed, configured, and maintained computer systems, software applications, peripherals, and network components.</li>
-                    <li>Supported Windows Server administration, Active Directory, server maintenance, updates, patches, backups, and troubleshooting.</li>
-                    <li>Performed system audits and communicated issue resolution updates to end users.</li>
+                    <li>Provided advanced technical support for Windows Server, Active Directory, networking, hardware, and infrastructure components, ensuring prompt resolution and minimal downtime. </li>
+
+<li>Administered Windows Server environments including Active Directory, DNS, DHCP, and Group Policy, maintaining optimal performance, security, and reliability. </li>
+
+<li>Collaborated with cross-functional teams to deploy and support IT infrastructure projects including server deployments, upgrades, and virtualized environments using VMware and Hyper-V. </li>
+
+<li>Conducted routine system audits to identify vulnerabilities, address risks, and enhance overall security posture. </li>
+
+<li>Performed routine server maintenance — updates, patches, backups — and monitored server logs proactively to prevent service disruptions. </li>
+
                 </ul>
 
                 <div class="tech-tags">
@@ -1218,6 +1282,16 @@ document.addEventListener("DOMContentLoaded", function () {
             gtag('event', 'whatsapp_click');
         });
     });
+  document.querySelectorAll('.show-more-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const card = this.closest('.timeline-card');
+        card.classList.toggle('expanded');
+
+        this.textContent = card.classList.contains('expanded')
+            ? 'Show Less ▲'
+            : 'Show More ▼';
+    });
+});
 
 });
 </script>
