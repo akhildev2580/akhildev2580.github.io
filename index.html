@@ -52,6 +52,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     margin-right:6px;
     color:#60a5fa;
 }
+    .nav-links a.active{
+    color:#60a5fa;
+    font-weight:700;
+}
+
+.nav-links a.active i{
+    color:#93c5fd;
+}
 
     .hero{
       padding:90px 0 70px;
@@ -132,6 +140,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     }
     .card h3{color:#93c5fd;margin-bottom:10px}
     .card p,.card li{color:#b9c7d8;font-size:15px}
+    .project-card{
+    position:relative;
+}
+
+.project-icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:rgba(96,165,250,.12);
+    border:1px solid rgba(96,165,250,.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#60a5fa;
+    font-size:22px;
+    margin-bottom:18px;
+    transition:.3s;
+}
+
+.project-card:hover .project-icon{
+    background:#2563eb;
+    color:#fff;
+    transform:scale(1.12) rotate(-5deg);
+    box-shadow:0 0 22px rgba(37,99,235,.45);
+}
 
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .stat{
@@ -1119,55 +1152,61 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <h2 class="section-title"><i class="fas fa-rocket"></i> Projects & Automation</h2>
     <p class="section-sub">Selected operational improvements and technical initiatives.</p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>DCOPS Automation Suite</h3>
-        <p>
-          Created 130+ automation workflows using Power Automate, PowerShell, and Batch scripting
-          to reduce repetitive operational tasks.
-        </p>
-      </div>
+    <div class="grid project-grid">
+  <div class="card project-card">
+    <div class="project-icon"><i class="fas fa-bolt"></i></div>
+    <h3>DCOPS Automation Suite</h3>
+    <p>
+      Created 130+ automation workflows using Power Automate, PowerShell, and Batch scripting
+      to reduce repetitive operational tasks.
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>Infrastructure Monitoring</h3>
-        <p>
-          Worked with SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, Uptime Robot, and DCIM
-          for proactive monitoring and incident response.
-        </p>
-      </div>
+  <div class="card project-card">
+    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+    <h3>Infrastructure Monitoring</h3>
+    <p>
+      Worked with SolarWinds NPM, SCOM, Dynatrace, Azure Monitor, Uptime Robot, and DCIM
+      for proactive monitoring and incident response.
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>Daily Operations Reports</h3>
-        <p>
-          Built automated reporting solutions for monitoring alerts, email counts, infrastructure status,
-          file movement checks, and shift handover support.
-        </p>
-      </div>
+  <div class="card project-card">
+    <div class="project-icon"><i class="fas fa-envelope-open-text"></i></div>
+    <h3>Daily Operations Reports</h3>
+    <p>
+      Built automated reporting solutions for monitoring alerts, email counts, infrastructure status,
+      file movement checks, and shift handover support.
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>Azure & Microsoft 365 Support</h3>
-        <p>
-          Supported hybrid cloud operations, Microsoft 365 administration, endpoint compliance,
-          and enterprise user access management.
-        </p>
-      </div>
+  <div class="card project-card">
+    <div class="project-icon"><i class="fas fa-cloud"></i></div>
+    <h3>Azure & Microsoft 365 Support</h3>
+    <p>
+      Supported hybrid cloud operations, Microsoft 365 administration, endpoint compliance,
+      and enterprise user access management.
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>Windows Server Upgrades</h3>
-        <p>
-          Participated in Windows Server upgrades, patch management, hardware refresh,
-          and migration activities while supporting business continuity.
-        </p>
-      </div>
+  <div class="card project-card">
+    <div class="project-icon"><i class="fas fa-server"></i></div>
+    <h3>Windows Server Upgrades</h3>
+    <p>
+      Participated in Windows Server upgrades, patch management, hardware refresh,
+      and migration activities while supporting business continuity.
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>Data Center Operations</h3>
-        <p>
-          Supported 24x7 enterprise operations across servers, storage, monitoring,
-          backup, disaster recovery, and critical incidents.
-        </p>
-      </div>
-    </div>
+  <div class="card project-card">
+    <div class="project-icon"><i class="fas fa-database"></i></div>
+    <h3>Data Center Operations</h3>
+    <p>
+      Supported 24x7 enterprise operations across servers, storage, monitoring,
+      backup, disaster recovery, and critical incidents.
+    </p>
+  </div>
+</div>
   </section>
 
   <section id="contact">
@@ -1359,8 +1398,35 @@ const statsObserver = new IntersectionObserver((entries)=>{
     threshold:0.4
 });
 
-statsObserver.observe(document.querySelector(".stats"));
+const statsEl = document.querySelector(".stats");
 
+if(statsEl){
+    statsObserver.observe(statsEl);
+}
+  
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 180;
+        const sectionHeight = section.offsetHeight;
+
+        if(window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight){
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+    });
+});
 });
 </script>
 
