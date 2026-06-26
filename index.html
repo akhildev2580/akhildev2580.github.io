@@ -750,11 +750,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   </section>
 
   <section class="stats">
-    <div class="stat"><h2>6+</h2><p>Years Experience</p></div>
-    <div class="stat"><h2>10K+</h2><p>Users Supported</p></div>
-    <div class="stat"><h2>4.5K+</h2><p>Servers & VMs</p></div>
-    <div class="stat"><h2>130+</h2><p>Automations Built</p></div>
-  </section>
+    <div class="stat">
+        <h2><span class="counter" data-target="6">0</span>+</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat">
+        <h2><span class="counter" data-target="10000">0</span>+</h2>
+        <p>Users Supported</p>
+    </div>
+
+    <div class="stat">
+        <h2><span class="counter" data-target="4500">0</span>+</h2>
+        <p>Servers & VMs</p>
+    </div>
+
+    <div class="stat">
+        <h2><span class="counter" data-target="130">0</span>+</h2>
+        <p>Automations Built</p>
+    </div>
+</section>
 
   <section class="career-snapshot">
     <h2 class="section-title"><i class="fas fa-briefcase"></i> Career Snapshot</h2>
@@ -1292,6 +1307,59 @@ document.addEventListener("DOMContentLoaded", function () {
             : 'Show More ▼';
     });
 });
+  const counters = document.querySelectorAll('.counter');
+
+function animateCounter(counter){
+
+    const target = Number(counter.dataset.target);
+
+    let current = 0;
+
+    const increment = Math.max(1, Math.ceil(target / 120));
+
+    const update = () => {
+
+        current += increment;
+
+        if(current < target){
+
+            counter.textContent = current.toLocaleString();
+
+            requestAnimationFrame(update);
+
+        }else{
+
+            counter.textContent = target.toLocaleString();
+
+        }
+
+    };
+
+    update();
+
+}
+
+let statsAnimated = false;
+
+const statsObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting && !statsAnimated){
+
+            counters.forEach(counter=>animateCounter(counter));
+
+            statsAnimated = true;
+
+        }
+
+    });
+
+},{
+    threshold:0.4
+});
+
+statsObserver.observe(document.querySelector(".stats"));
 
 });
 </script>
